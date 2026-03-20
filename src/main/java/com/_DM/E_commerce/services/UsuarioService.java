@@ -54,6 +54,14 @@ public class UsuarioService {
         } else {
             return "Usuario não encontrado";
         }
+    }
 
+    public String deletarUsuario(UUID id) {
+        if (usuarioRepository.existsById(id)) {
+            usuarioRepository.deleteById(id);
+            return "Usuário excluído com sucesso";
+        } else {
+            return "Usuário não encontrado";
+        }
     }
 }
